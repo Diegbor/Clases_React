@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Boton from './Boton'
 
-const Header = ({titulo}) => {
+const Header = ({titulo, onAdd, showAdd}) => {
 
     const onClick = () =>{
         console.log('click desde parent')
@@ -10,7 +10,8 @@ const Header = ({titulo}) => {
   return (
     <header className='header'>
         <h2>{titulo}</h2>
-        <Boton color='green' texto='Nueva' onClick={onClick}/>
+        <Boton color={showAdd ? 'red' : 'green'} 
+        texto={showAdd ? 'Cerrar' : 'Nueva'} onClick={onAdd}/>
     </header>
   )
 }
